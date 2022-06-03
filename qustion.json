@@ -1,0 +1,53 @@
+[
+    {
+        "type": "choseBetweenOptions",
+        "question": "question",
+        "options": [
+            {
+                "text": "option one",
+                "results": [
+                    {
+                        "field": "bio",
+                        "score": -5
+                    },
+                    {
+                        "field": "math",
+                        "score": 10
+                    }
+                ]
+            },
+            {
+                "text": "option two",
+                "results": [
+                    {
+                        "field": "history",
+                        "score": 5
+                    },
+                    {
+                        "field": "math",
+                        "score": -6
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "rating",
+        "question": "question",
+        "stats": {
+            "fromNum": -5,
+            "toNum": 5,
+            "results": [
+                {
+                    "field": "history",
+                    "score": 5
+                },
+                {
+                    "field": "math",
+                    "score": -6
+                }
+            ],
+            "multiplyIndexBy": 2
+        }
+    }
+]
