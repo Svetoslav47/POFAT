@@ -37,6 +37,16 @@
         "stats": {
             "fromNum": -5,
             "toNum": 5,
+            "results": [
+                {
+                    "field": "history",
+                    "score": 5
+                },
+                {
+                    "field": "math",
+                    "score": -6
+                }
+            ],
             "multiplyIndexBy": 2
         }
     }
