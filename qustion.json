@@ -2,52 +2,66 @@
     {
         "type": "choseBetweenOptions",
         "question": "question",
+        "main_field": 1,
         "options": [
             {
                 "text": "option one",
-                "results": [
-                    {
-                        "field": "bio",
-                        "score": -5
-                    },
-                    {
-                        "field": "math",
-                        "score": 10
-                    }
-                ]
+                "fields": [0,4,6,14],
+                "scores": [10,-2,4,5]
             },
             {
                 "text": "option two",
-                "results": [
-                    {
-                        "field": "history",
-                        "score": 5
-                    },
-                    {
-                        "field": "math",
-                        "score": -6
-                    }
-                ]
+                "fields": [0,4,6,14],
+                "scores": [10,-2,4,5]
             }
         ]
     },
     {
         "type": "rating",
         "question": "question",
-        "stats": {
-            "fromNum": -5,
-            "toNum": 5,
-            "results": [
+        "main_field": 2,
+        "options_num": 10,
+        "options": [
                 {
-                    "field": "history",
-                    "score": 5
+                    "fields": [1,4,5,9,10],
+                    "scores": [10,-15,40,30,-25]
                 },
                 {
-                    "field": "math",
-                    "score": -6
+                    "fields": [1,4,5,9,10],
+                    "scores": [10,-15,40,30,-25]
+                },
+                {
+                    "fields": [1,4,5,9,10],
+                    "scores": [10,-15,40,30,-25]
+                },
+                {
+                    "fields": [1,4,5,9,10],
+                    "scores": [10,-15,40,30,-25]
+                },
+                {
+                    "fields": [1,4,5,9,10],
+                    "scores": [10,-15,40,30,-25]
+                },
+                {
+                    "fields": [1,4,5,9,10],
+                    "scores": [10,-15,40,30,-25]
+                },
+                {
+                    "fields": [1,4,5,9,10],
+                    "scores": [10,-15,40,30,-25]
+                },
+                {
+                    "fields": [1,4,5,9,10],
+                    "scores": [10,-15,40,30,-25]
+                },
+                {
+                    "fields": [1,4,5,9,10],
+                    "scores": [10,-15,40,30,-25]
+                },
+                {
+                    "fields": [1,4,5,9,10],
+                    "scores": [10,-15,40,30,-25]
                 }
-            ],
-            "multiplyIndexBy": 2
-        }
+        ]
     }
 ]

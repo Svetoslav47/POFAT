@@ -1,4 +1,5 @@
-[
-    "math",
-    "physics"
-]
+{
+    "math":0,
+    "physics":1,
+    "biology":2
+}
