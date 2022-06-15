@@ -127,5 +127,5 @@ app.get('/api/get_result',(req,res)=>{
 	res.end();
 });
 
-app.use("/api/", router);
+app.use("/api/", app);
 app.listen(9988, () => {});
