@@ -50,7 +50,7 @@ app.post('/api/first_questions',(req,res)=>{
 });
 
 app.get('/api/get_question',(req,res)=>{
-	var subjects[] = req.session.subs;
+	var subjects = req.session.subs;
 	var max = -3000;
 	var dir;
 
@@ -78,7 +78,7 @@ app.post('/api/get_question',(req,res)=>{
 		body = Buffer.concat(body).toString();
 		const answer = qs.parse(body);
 		var qestion = JSON.parse(req.session.question);
-		for(int i=0;question.options[answer].fields[i]!=undefined;i++){
+		for(let i=0;question.options[answer].fields[i]!=undefined;i++){
 			req.session.subs[question.options[answer].fields[i]] += question.options[answer].scores[i];
 		}
 	});
@@ -86,9 +86,11 @@ app.post('/api/get_question',(req,res)=>{
 });
 
 app.get('/api/get_result',(req,res)=>{
-	var subjects[] = req.session.subs;
-	var professions[];
-	var br=0;
+	var subjects = req.session.subs;
+	var professions;
+	var br = 0;
+	var numb;
+	var maxIndex;
 
 	//Database later(not file)
 	fs.readFile("professions.json","utf8",function(err,data){
@@ -100,16 +102,24 @@ app.get('/api/get_result',(req,res)=>{
 	for(let i=0;prof[i]!=undefined;i++){
 		for(let j=0;prof[i].min[j]!=undefined;j++){
 			if(subjects[j]<prof[i].min[j]){
-				professions[i-br]="\0";
+				professions[i - br] = "\0";
+				numb[i - br] = 0;
 				br++;
 				break;
 			}
-			professions[i-br]=prof[i].prof;
+			professions[i - br] = prof[i].prof;
+			numb[i - br] += subjects[j] - prof[i].min[j];
 		}
 	}
+
+	for (let i = 0; i < 5; i++) {
+		maxIndex[i] = numb.indexOf(Math.max(...numb));
+		numb[maxIndex[i]] = 0;
+    }
+
 	var prof_json = "[";
-	for(let i=0;professions[i]!="\0";i++){
-		prof_json += `"${professions[i]}",`;
+	for (let i = 0; i < 5; i++) {
+		prof_json += `"${professions[maxIndex[i]]}",`;
 	}
 	prof_json.slice(0,-1);
 	prof_json += "]";
