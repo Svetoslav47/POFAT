@@ -4,9 +4,10 @@ var fs = require('fs');
 var session = require('express-session');
 const filestore = require("session-file-store")(session);
 var qs = require('querystring');
+var router = express.Router();
 
 //Database later(not file)
-	fs.readFile("all_questions","utf8",function(err,data){
+	fs.readFile(__dirname + "/all_questions.json","utf8",function(err,data){
 		if(err) throw err;
 		var all_questions = JSON.parse(data);
 		return;
@@ -16,12 +17,14 @@ app.use(session({
     name: "Session",
     secret: "aertsysjdhtjfjytr",
     resave: false,
+    saveUninitialized: true,
     store: new filestore()
 }));
 
-app.get('/api/first_questions',(req,res)=>{
+
+router.get('/api/first_questions',(req,res)=>{
 	//Database later(not file)
-	fs.readFile("questions.json","utf8",function(err,data){
+	fs.readFile(__dirname + "/questions.json","utf8",function(err,data){
 		if(err) throw err;
 		res.json(data);
 		req.session.question = data;
@@ -32,7 +35,7 @@ app.get('/api/first_questions',(req,res)=>{
 	});
 });
 
-app.post('/api/first_questions',(req,res)=>{
+router.post('/api/first_questions',(req,res)=>{
 	let body = [];
 	req.on('data', (dat)=>{
 		body.push(dat);
@@ -49,7 +52,7 @@ app.post('/api/first_questions',(req,res)=>{
 	res.end();
 });
 
-app.get('/api/get_question',(req,res)=>{
+router.get('/api/get_question',(req,res)=>{
 	var subjects = req.session.subs;
 	var max = -3000;
 	var dir;
@@ -70,7 +73,7 @@ app.get('/api/get_question',(req,res)=>{
 	res.end();
 });
 
-app.post('/api/get_question',(req,res)=>{
+router.post('/api/get_question',(req,res)=>{
 	let body = [];
 	req.on('data', (dat)=>{
 		body.push(dat);
@@ -85,7 +88,7 @@ app.post('/api/get_question',(req,res)=>{
 	res.end();
 });
 
-app.get('/api/get_result',(req,res)=>{
+router.get('/api/get_result',(req,res)=>{
 	var subjects = req.session.subs;
 	var professions;
 	var br = 0;
@@ -93,7 +96,7 @@ app.get('/api/get_result',(req,res)=>{
 	var maxIndex;
 
 	//Database later(not file)
-	fs.readFile("professions.json","utf8",function(err,data){
+	fs.readFile(__dirname + "/professions.json","utf8",function(err,data){
 		if(err) throw err;
 		var prof = JSON.parse(data);
 		return;
@@ -127,5 +130,5 @@ app.get('/api/get_result',(req,res)=>{
 	res.end();
 });
 
-app.use("/api/", app);
+app.use("/",router);
 app.listen(9988, () => {});
