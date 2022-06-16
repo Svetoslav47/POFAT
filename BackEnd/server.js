@@ -38,7 +38,7 @@ router.get('/',(req,res)=>{
 
 router.get('/api/first_questions',(req,res)=>{
 	//Database later(not file)
-	res.writeHead(200, {"Content-Type" : "text/json"});
+	req.session.subs = [];
 	fs.readFile(__dirname + "/questions.json","utf8",function(err,data){
 		if(err) throw err;
 		res.write(data);

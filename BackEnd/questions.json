@@ -1,11 +1,11 @@
 [
     {
         "type": "choseBetweenOptions",
-        "question": "question",
+        "question": "Chose between a and b",
         "main_field": 1,
         "options": [
             {
-                "text": "option one",
+                "text": "a",
                 "fields": [
                     0,
                     4,
@@ -20,7 +20,7 @@
                 ]
             },
             {
-                "text": "option two",
+                "text": "b",
                 "fields": [
                     0,
                     4,
