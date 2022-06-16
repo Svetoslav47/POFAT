@@ -145,14 +145,5 @@ router.get('/api/get_result',(req,res)=>{
 	res.end();
 });
 
-router.get('/', (req,res)=>{
-	fs.readFile("../FrontEnd/MainPage/index.html", (err,data)=>{
-		if(err) throw err;
-		res.writeHead(200, { 'Content-Type': 'text/html' });
-		res.write(data);
-		return res.end();
-	});
-});
-
 app.use("/",router);
 app.listen(9988, () => {});
