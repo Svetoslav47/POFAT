@@ -10,4 +10,11 @@ body {
 
 .siteName span {
     color: #A299E9;
+    font-size: inherit;
+}
+
+.hexagonBorderButton {
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 0.5em;
 }
