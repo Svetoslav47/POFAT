@@ -24,8 +24,21 @@ app.use(session({
 }));
 
 
+router.get('/',(req,res)=>{
+	fs.readFile("../FrontEnd/Quiz/index.html", (err, data) => {
+		if(err){
+			throw err;
+		}else{
+			res.writeHead(200, {"Content-Type" : "text/html"})
+			res.write(data);
+		}
+		return res.end();
+	})
+});
+
 router.get('/api/first_questions',(req,res)=>{
 	//Database later(not file)
+	res.writeHead(200, {"Content-Type" : "text/json"});
 	fs.readFile(__dirname + "/questions.json","utf8",function(err,data){
 		if(err) throw err;
 		res.write(data);
