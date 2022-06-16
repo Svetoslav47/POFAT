@@ -25,7 +25,7 @@ app.use(session({
 
 
 router.get('/',(req,res)=>{
-	fs.readFile("../FrontEnd/Quiz/index.html", (err, data) => {
+	fs.readFile("../FrontEnd/MainPage/index.html", (err, data) => {
 		if(err){
 			throw err;
 		}else{
@@ -109,6 +109,8 @@ router.get('/api/get_result',(req,res)=>{
 	var br = 0;
 	var numb;
 	var maxIndex;
+	var percent;
+	var sum;
 
 	//Database later(not file)
 	fs.readFile(__dirname + "/professions.json","utf8",function(err,data){
@@ -132,12 +134,21 @@ router.get('/api/get_result',(req,res)=>{
 
 	for (let i = 0; i < 5; i++) {
 		maxIndex[i] = numb.indexOf(Math.max(...numb));
+		percent[i] = numb[maxIndex[i]];
+		sum += numb[maxIndex[i]];
 		numb[maxIndex[i]] = 0;
+    }
+
+    for(let i=0; i<5; i++){
+    	percent[i] = (percent[i]*100)/sum;
     }
 
 	var prof_json = "[";
 	for (let i = 0; i < 5; i++) {
-		prof_json += `"${professions[maxIndex[i]]}",`;
+		prof_json += "{";
+		prof_json += `"profession":"${professions[maxIndex[i]]}",`;
+		prof_json += `"percent":"${percent[i]}"`;
+		prof_json += "},"
 	}
 	prof_json.slice(0,-1);
 	prof_json += "]";
