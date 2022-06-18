@@ -30,6 +30,14 @@ body{
 .cards{
     display: flex;
 }
+
+.num_menu{
+    background-color: #1b1c33;
+    width: 95% !important;
+    border: none !important;
+    margin-left: auto;
+    margin-right: auto;
+}
 .card{
     height: fit-content;
     width: 12em;
