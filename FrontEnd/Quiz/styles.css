@@ -4,6 +4,10 @@ body {
     font-size: 1.4em;
 }
 
+.hidden {
+    display: none !important;
+}
+
 nav {
     display: flex;
     align-items: center;

@@ -25,18 +25,40 @@ function awnserStartingQuestion() {
     if (numberOfQuestionsAwnsered < numberOfStartingQuestions) {
         askQuestion(startingQuestions[numberOfQuestionsAwnsered]);
     } else if (numberOfQuestionsAwnsered == numberOfStartingQuestions) {
-
         fetch("/api/first_questions", {
             method: "POST",
             body: JSON.stringify([1, 2, 3, 4, 5, 6]),
             headers: {
                 "Content-Type": "application/json"
             }
-        });
+        }).then(() => {
+            fetch("/api/get_question").then((response) => {
+                JSON.parse(response).then((question) => {
+                    renderQuestion(question);
+                })
+            })
+        })
+
+
     } else if (numberOfQuestionsAwnsered < numberOfQuestionsToAsk) {
-        fetch();
+        fetch("/api/get_question").then((response) => {
+            JSON.parse(response).then((question) => {
+                renderQuestion(question);
+            })
+        })
     } else {
         //show result
     }
 
+}
+
+function renderQuestion(question) {
+    switch (question.type) {
+        case "chose":
+            document.querySelector("")
+            break;
+
+        default:
+            break;
+    }
 }
