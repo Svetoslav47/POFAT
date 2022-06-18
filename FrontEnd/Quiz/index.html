@@ -8,6 +8,7 @@
     <title>POFAT</title>
     <link rel="stylesheet" href="../Quiz/styles.css">
     <link rel="stylesheet" href="../global.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
         </div>
     </nav>
     <main class="main">
-        <div class="intro">
+        <div class="intro hidden">
             <h2>Добре дошли на...</h2>
             <h1 class="siteName">PO<span>FAT</span></h1>
             <p class="description">Честито! Направихте първата стъпка към по-добро бъдеще с интересна за вас професия!
@@ -37,8 +38,10 @@
 
         </div>
 
-        <div class="results hidden">
-
+        <div class="results">
+            <h1 class="title">Резултати</h1>
+            <p class="description">От всички професии, които поддържаме, избрахме 5, които са най-подходящи за вас!</p>
+            <canvas id="profChart" style="width:100%;max-width:700px"></canvas>
         </div>
     </main>
 </body>

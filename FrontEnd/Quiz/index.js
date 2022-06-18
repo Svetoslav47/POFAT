@@ -62,3 +62,40 @@ function renderQuestion(question) {
             break;
     }
 }
+
+function showResults() {
+    var xValues = [
+        ["Label1 Line1:", "Label1 Line2"],
+        ["Label2 Line1", "Label2 Line2"], "Spain \n 10%", "USA \n 10%", "Argentina \n 10%"
+    ];
+    var yValues = [55, 49, 44, 24, 15];
+    var barColors = ["#A299E9", "white", "white", "white", "white"];
+
+    new Chart("profChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+            title: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        display: false
+                    }
+                }],
+                xAxes: [{
+                    barPercentage: 0.4
+                }]
+            }
+        }
+    });
+}

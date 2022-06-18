@@ -66,3 +66,20 @@ nav .links a {
     padding: 0.5em 2em;
     color: inherit;
 }
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.results .title {
+    color: white;
+    text-align: center;
+}
+
+.results .description {
+    color: white;
+    width: 60%;
+    text-align: center;
+}
