@@ -1,6 +1,7 @@
 body {
     background-color: #131832;
     padding: 0px 5em;
+    font-size: 1.4em;
 }
 
 nav {
@@ -57,6 +58,7 @@ nav .links a {
     background: none;
     cursor: pointer;
     margin-top: 2em;
+    font-size: 1.5em;
     padding: 0.5em 2em;
     color: inherit;
 }
