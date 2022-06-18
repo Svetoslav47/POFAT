@@ -5,22 +5,27 @@ let numberOfQuestionsAwnsered = 0;
 let numberOfStartingQuestions = 0;
 const startingQuestions = [];
 
+const introDivElement = document.querySelector("#intro");
+const choseDivElement = document.querySelector("#optionQuestions");
+const ratingDivElement = document.querySelector("#sliderQuestion");
+
 function startQuiz() {
     fetch("/api/first_questions").then((res) => {
         res.json().then((responseJson) => {
             console.log(responseJson);
             numberOfStartingQuestions = responseJson.lenght;
             startingQuestions.push(...responseJson);
+            introDivElement.classList.add("hidden");
             askQuestion();
-        });
-    });
+        })
+    })
 }
 
 function askQuestion(question) {
 
 }
 
-function awnserStartingQuestion() {
+function awnserQuestion() {
     numberOfQuestionsAwnsered++;
     if (numberOfQuestionsAwnsered < numberOfStartingQuestions) {
         askQuestion(startingQuestions[numberOfQuestionsAwnsered]);
@@ -52,10 +57,22 @@ function awnserStartingQuestion() {
 
 }
 
-function renderQuestion(question) {
+function renderQuestion(){
+    const question = questions[numQuestionsAnswered];
+    console.log(question)
     switch (question.type) {
         case "chose":
-            document.querySelector("")
+            choseDivElement.classList.remove("hidden");
+            const optionsElements = choseDivElement.querySelectorAll(".option");
+            question.options.forEach((option, id) => {
+                console.log(option);
+                optionsElements[id].querySelector(".imageBorder").querySelector(".optionImage").src = `/Pictures/fields/field_${option.main_field}_image.png`;
+                optionsElements[id].querySelector(".optionText").innerText = option.text;
+            });
+            break;
+
+        case "rating":
+            choseDivElement.style.display = "block";
             break;
 
         default:
