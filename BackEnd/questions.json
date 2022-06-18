@@ -1,9 +1,12 @@
-[{
+[
+    {
         "type": "chose",
-        "question": "Chose between a and b",
+        "question": "chose between a and b",
         "main_field": 1,
-        "options": [{
-                "text": "a",
+        "options": [
+            {
+                "main_field": 1,
+                "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi expedita inventore, nobis itaque numquam sapiente error dolorum id corporis, rerum sit? Aspernatur saepeperspiciatis vel, cumque praesentium minus illo repellat.",
                 "fields": [
                     0,
                     4,
@@ -11,12 +14,14 @@
                     14
                 ],
                 "scores": [
-                    10, -2,
+                    10,
+                    -2,
                     4,
                     5
                 ]
             },
             {
+                "main_field": 2,
                 "text": "b",
                 "fields": [
                     0,
@@ -25,7 +30,8 @@
                     14
                 ],
                 "scores": [
-                    10, -2,
+                    10,
+                    -2,
                     4,
                     5
                 ]
@@ -37,7 +43,8 @@
         "question": "question",
         "main_field": 2,
         "options_num": 10,
-        "options": [{
+        "options": [
+            {
                 "fields": [
                     1,
                     4,
@@ -46,9 +53,11 @@
                     10
                 ],
                 "scores": [
-                    10, -15,
+                    10,
+                    -15,
                     40,
-                    30, -25
+                    30,
+                    -25
                 ]
             },
             {
@@ -60,9 +69,11 @@
                     10
                 ],
                 "scores": [
-                    10, -15,
+                    10,
+                    -15,
                     40,
-                    30, -25
+                    30,
+                    -25
                 ]
             },
             {
@@ -74,9 +85,11 @@
                     10
                 ],
                 "scores": [
-                    10, -15,
+                    10,
+                    -15,
                     40,
-                    30, -25
+                    30,
+                    -25
                 ]
             },
             {
@@ -88,9 +101,11 @@
                     10
                 ],
                 "scores": [
-                    10, -15,
+                    10,
+                    -15,
                     40,
-                    30, -25
+                    30,
+                    -25
                 ]
             },
             {
@@ -102,9 +117,11 @@
                     10
                 ],
                 "scores": [
-                    10, -15,
+                    10,
+                    -15,
                     40,
-                    30, -25
+                    30,
+                    -25
                 ]
             },
             {
@@ -116,9 +133,11 @@
                     10
                 ],
                 "scores": [
-                    10, -15,
+                    10,
+                    -15,
                     40,
-                    30, -25
+                    30,
+                    -25
                 ]
             },
             {
@@ -130,9 +149,11 @@
                     10
                 ],
                 "scores": [
-                    10, -15,
+                    10,
+                    -15,
                     40,
-                    30, -25
+                    30,
+                    -25
                 ]
             },
             {
@@ -144,9 +165,11 @@
                     10
                 ],
                 "scores": [
-                    10, -15,
+                    10,
+                    -15,
                     40,
-                    30, -25
+                    30,
+                    -25
                 ]
             },
             {
@@ -158,9 +181,11 @@
                     10
                 ],
                 "scores": [
-                    10, -15,
+                    10,
+                    -15,
                     40,
-                    30, -25
+                    30,
+                    -25
                 ]
             },
             {
@@ -172,9 +197,11 @@
                     10
                 ],
                 "scores": [
-                    10, -15,
+                    10,
+                    -15,
                     40,
-                    30, -25
+                    30,
+                    -25
                 ]
             }
         ]

@@ -67,8 +67,9 @@ nav .links a {
     color: inherit;
 }
 
-.results {
+.optionQuestions {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
 }
@@ -82,4 +83,66 @@ nav .links a {
     color: white;
     width: 60%;
     text-align: center;
+}
+
+.questionTitle {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 0.2em;
+    margin-top: 1.5em;
+}
+
+.optionQuestions .options {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 5em;
+    justify-content: space-evenly;
+}
+
+.optionQuestions .options .option {
+    width: 50%;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.optionQuestions .options .option .optionText {
+    width: 100%;
+    height: 10em;
+    text-align: center;
+}
+
+.optionQuestions .options .option .imageBorder {
+    width: 8em;
+    height: 7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background: url("/Pictures/hex.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.optionQuestions .options .option .imageBorder .optionImage {
+    width: 4.4em;
+    height: 4.4em;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+.optionQuestions .options .option .imageBorder:hover {
+    background: url("/Pictures/hexHover.png");
+}
+
+.optionQuestions .options .option .optionText {
+    color: white;
+    font-weight: 400;
 }
