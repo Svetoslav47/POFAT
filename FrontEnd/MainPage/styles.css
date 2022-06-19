@@ -216,14 +216,43 @@ body{
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100%;
+  height: 20%;
 }
 
-.group{
+.group_1{
   border: solid 0.7px #A299E9;
   border-radius: 25px;
+  padding: 2%;
   margin-left: auto;
   margin-right: auto;
-  height: 20%;
+  height: 100%;
+}
+
+.groups h3{
+  font-size: 1.5em;
+}
+
+.groups a{
+  text-decoration: none;
+  color: unset;
+}
+
+.group_2{
+  border: solid 0.7px #A299E9;
+  border-radius: 25px;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+.group_3{
+  border: solid 0.7px #A299E9;
+  border-radius: 25px;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%em;
 }
 
 /* SCROLLBAR*/
