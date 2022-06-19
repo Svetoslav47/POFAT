@@ -9,9 +9,10 @@ var router = express.Router();
 app.use(express.static(__dirname + '/../FrontEnd'));
 
 //Database later(not file)
+var all_questions = undefined;
 fs.readFile(__dirname + "/all_questions.json", "utf8", function(err, data) {
     if (err) throw err;
-    var all_questions = JSON.parse(data);
+    all_questions = JSON.parse(data);
     return;
 });
 
@@ -54,7 +55,6 @@ router.post('/api/first_questions', (req, res) => {
     let body = [];
     req.on('data', (dat) => {
         body.push(dat);
-        console.log(dat)
     }).on('end', () => {
         body = Buffer.concat(body).toString();
         const otg = JSON.parse(body);
@@ -79,14 +79,19 @@ router.get('/api/get_question', (req, res) => {
             dir = i;
         }
     }
+    let questionToSend;
     for (let j = 0; all_questions[j] != undefined; j++) {
         if (all_questions[j].main_field == dir) {
-            res.write(all_questions[j]);
+            
+            questionToSend = all_questions[j];
             all_questions[j].main_field = -1;
             req.session.question = all_questions[j];
+            break;
         }
     }
+    res.write(JSON.stringify(questionToSend))
     res.end();
+    
 });
 
 router.post('/api/get_question', (req, res) => {
@@ -95,12 +100,15 @@ router.post('/api/get_question', (req, res) => {
         body.push(dat);
     }).on('end', () => {
         body = Buffer.concat(body).toString();
-        const answer = qs.parse(body);
-        var qestion = JSON.parse(req.session.question);
+        const answer = JSON.parse(body);
+        var question = req.session.question;
         for (let i = 0; question.options[answer].fields[i] != undefined; i++) {
             req.session.subs[question.options[answer].fields[i]] += question.options[answer].scores[i];
         }
     });
+    /*req.session.subs.forEach((test) => {
+        console.log(test)
+    })*/
     res.end();
 });
 
@@ -166,12 +174,53 @@ router.get('/api/get_result', (req, res) => {
     var percent;
     var sum;
 
+    var prof;
+
     //Database later(not file)
     fs.readFile(__dirname + "/university.json", "utf8", function(err, data) {
         if (err) throw err;
-        var prof = JSON.parse(data);
+        prof = JSON.parse(data);
+        console.log(prof)
+
+        for (let i = 0; prof[i] != undefined; i++) {
+        for (let j = 0; prof[i].min[j] != undefined; j++) {
+            if (subjects[j] < prof[i].min[j]) {
+                professions[i - br] = "\0";
+                numb[i - br] = 0;
+                br++;
+                break;
+            }
+            professions[i - br] = prof[i].university;
+            numb[i - br] += subjects[j] - prof[i].min[j];
+        }
+    }
+
+    for (let i = 0; i < 5; i++) {
+        maxIndex[i] = numb.indexOf(Math.max(...numb));
+        percent[i] = numb[maxIndex[i]];
+        sum += numb[maxIndex[i]];
+        numb[maxIndex[i]] = 0;
+    }
+
+    for (let i = 0; i < 5; i++) {
+        percent[i] = (percent[i] * 100) / sum;
+    }
+
+    var prof_json = "[";
+    for (let i = 0; i < 5; i++) {
+        prof_json += "{";
+        prof_json += `"university":"${professions[maxIndex[i]]}",`;
+        prof_json += `"percent":"${percent[i]}"`;
+        prof_json += "},"
+    }
+    prof_json.slice(0, -1);
+    prof_json += "]";
+    res.write(prof_json);
+    res.end();
         return;
     });
+
+  
 
     for (let i = 0; prof[i] != undefined; i++) {
         for (let j = 0; prof[i].min[j] != undefined; j++) {

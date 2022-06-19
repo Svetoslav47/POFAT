@@ -21,50 +21,49 @@
         </div>
     </nav>
     <main class="main">
-        <<<<<<< Updated upstream <div class="intro hidden">
-            =======
-            <div id="intro" class="intro">
-                >>>>>>> Stashed changes
-                <h2>Добре дошли на...</h2>
-                <h1 class="siteName">PO<span>FAT</span></h1>
-                <p class="description">Честито! Направихте първата стъпка към по-добро бъдеще с интересна за вас
-                    професия!
-                    <br><br>Не се замисляйте за отговора на въпросите - позволете на сърцето ви да избере това, което
-                    иска, за да бъде точен резултата. Въпросите могат да се струват странни и не свързани с професии, не
-                    се притеснявайте. Това е направено,
-                    за да можем по-точно да анализираме предпочитанията ви и възможностите за бъдещата ви професия.
-                </p>
-                <button id="startButton" class="startButton hexagonBorderButton">Започни</button>
-            </div>
+        <div id="intro" class="intro">
+            <h2>Добре дошли на...</h2>
+            <h1 class="siteName">PO<span>FAT</span></h1>
+            <p class="description">Честито! Направихте първата стъпка към по-добро бъдеще с интересна за вас
+                професия!
+                <br><br>Не се замисляйте за отговора на въпросите - позволете на сърцето ви да избере това, което
+                иска, за да бъде точен резултата. Въпросите могат да се струват странни и не свързани с професии, не
+                се притеснявайте. Това е направено,
+                за да можем по-точно да анализираме предпочитанията ви и възможностите за бъдещата ви професия.
+            </p>
+            <button id="startButton" class="startButton hexagonBorderButton">Започни</button>
+        </div>
 
-            <div id="optionQuestions" class="optionQuestions hidden">
-                <h2 id="questionTitle" class="questionTitle">Question</h2>
-                <div class="options">
-                    <div class="option">
-                        <div class="imageBorder">
-                            <img class="optionImage" src="" alt="snimka">
-                        </div>
-                        <p class="optionText">Option</p>
+        <div id="optionQuestions" class="optionQuestions hidden">
+            <h2 id="questionTitle" class="questionTitle">Question</h2>
+            <div class="options">
+                <div class="option">
+                    <div class="imageBorder">
+                        <img class="optionImage" src="" alt="snimka">
                     </div>
-                    <div class="option">
-                        <div class="imageBorder">
-                            <img class="optionImage" src="" alt="snimka">
-                        </div>
-                        <p class="optionText">Option</p>
+                    <p class="optionText">Option</p>
+                </div>
+                <div class="option">
+                    <div class="imageBorder">
+                        <img class="optionImage" src="" alt="snimka">
                     </div>
+                    <p class="optionText">Option</p>
                 </div>
             </div>
+        </div>
 
-            <div id="sliderQuestion" class="sliderQuestion hidden">
+        <div id="sliderQuestion" class="sliderQuestion hidden">
+            <h1 class="questionTitle">Question</h1>
+            <input type="range" class="slider" min="0" max="2" step="0.01">
+            <button class="continue">Продължи</button>
+        </div>
 
-            </div>
-
-            <div class="results">
-                <h1 class="title">Резултати</h1>
-                <p class="description">От всички професии, които поддържаме, избрахме 5, които са най-подходящи за вас!
-                </p>
-                <canvas id="profChart" style="width:100%;max-width:700px"></canvas>
-            </div>
+        <div class="results hidden">
+            <h1 class="title">Резултати</h1>
+            <p class="description">От всички професии, които поддържаме, избрахме 5, които са най-подходящи за вас!
+            </p>
+            <canvas id="profChart" style="width:100%;max-width:700px"></canvas>
+        </div>
     </main>
 </body>
 
