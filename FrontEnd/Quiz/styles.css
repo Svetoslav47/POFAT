@@ -4,6 +4,11 @@ body {
     font-size: 1.4em;
 }
 
+html body {
+    height: 90vh;
+    overflow-y: hidden;
+}
+
 .hidden {
     display: none !important;
 }
@@ -31,6 +36,10 @@ nav .links a {
     color: white;
     text-decoration: none;
     margin: 0px 0.9em;
+}
+
+.main {
+    height: 100%;
 }
 
 .intro {
@@ -67,13 +76,6 @@ nav .links a {
     color: inherit;
 }
 
-.optionQuestions {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-}
-
 .results .title {
     color: white;
     text-align: center;
@@ -88,8 +90,16 @@ nav .links a {
 .questionTitle {
     font-size: 2em;
     color: white;
-    margin-bottom: 0.2em;
-    margin-top: 1.5em;
+}
+
+.optionQuestions {
+    margin-top: 5%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .optionQuestions .options {
@@ -145,4 +155,65 @@ nav .links a {
 .optionQuestions .options .option .optionText {
     color: white;
     font-weight: 400;
+}
+
+.sliderQuestion {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sliderQuestion .questionTitle {
+    text-align: center;
+}
+
+.sliderQuestion {
+    margin-top: 10%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.sliderQuestion .slider {
+    margin-top: 12%;
+    appearance: none;
+    width: 80%;
+    /* Full-width */
+    height: 30px;
+    /* Specified height */
+    background: #FFFFFF;
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    border-radius: 25px;
+}
+
+.sliderQuestion .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 50px;
+    /* Set a specific slider handle width */
+    height: 50px;
+    /* Slider handle height */
+    background: #A299E9;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+    border-radius: 50%;
+}
+
+.sliderQuestion .continue {
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: 1em;
+    margin-top: 12%;
+    background-color: #00000000;
+    color: white;
+    padding: 1em;
+    cursor: pointer;
 }
