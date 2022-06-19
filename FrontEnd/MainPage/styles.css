@@ -91,6 +91,140 @@ body{
   height: 100%;
 }
 
+.menu{
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  background-color: rgb(26, 29, 59);
+  border-radius: 25px;
+}
+
+.menu h2{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+  font-size: 3.5em;
+}
+
+.menu_steps{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-left: auto;
+}
+
+.steps{
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.steps img{
+  width: 30%;
+  height: 30%;
+  margin: auto;
+}
+
+.steps h4{
+  font-size: 1.4em;
+  margin-top: 3%;
+  margin-bottom: 0px;
+}
+
+.steps p{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.results{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 4%;
+  margin-bottom: 5%;
+}
+
+.results h3{
+  font-size: 2em;
+  margin-bottom: 0px;
+}
+
+.results p{
+  margin-top: 1%;
+}
+
+.result_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result_img_1{
+  width: 45%;
+  height: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result_img_1 img{
+  width: 100%;
+  height: 100%;
+}
+
+.result_img_1 h4{
+  margin-bottom: 0px;
+  font-size: 1.5em;
+  margin-top: 1.8%;
+}
+
+.result_img_1 p{
+  margin-bottom: 2%;
+}
+
+.upotreba{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 6%;
+}
+
+.upotreba h2{
+  font-size: 3.5em;
+  margin-bottom: 1.5em;
+}
+
+.groups{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.group{
+  border: solid 0.7px #A299E9;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 20%;
+}
 
 /* SCROLLBAR*/
 /* width */
